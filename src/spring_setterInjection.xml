@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="com.vikram.bishwajit.setterInjection.Triangle">
+		<property name="typeOfTriangle" value="EQUILATERAl" />
+		<property name="point" ref="points" />
+		<property name="listPoint">
+			<list>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</list>
+		</property>
+		<property name="mapPoint">
+			<map>
+				<entry key="PointA" value-ref="points1"/>
+				<entry key="PointB" value-ref="points2"/>
+				<entry key="PointC" value-ref="points3"/>
+			</map>
+		</property>
+		<property name="setPoint">
+			<set>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</set>
+		</property>
+	</bean>
+	
+	<bean id="points"   class="com.vikram.bishwajit.setterInjection.Point">
+		<property name="x" value="2" />
+		<property name="y" value="3" />
+	</bean>
+	
+	<bean id="points1"   class="com.vikram.bishwajit.setterInjection.Point">
+		<property name="x" value="1" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="points2"   class="com.vikram.bishwajit.setterInjection.Point">
+		<property name="x" value="-1" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="points3"   class="com.vikram.bishwajit.setterInjection.Point">
+		<property name="x" value="1" />
+		<property name="y" value="1" />
+	</bean>
+</beans>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle1" class="com.vikram.bishwajit.constructorInjection.Triangle">
+		<constructor-arg value="EQUILATERAl" />
+		<constructor-arg value="20" />
+		<constructor-arg ref ="p"/>
+		<constructor-arg>
+			<list>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="PointA" value-ref="points1"></entry>
+				<entry key="PointB" value-ref="points2" ></entry>
+				<entry key="PointC" value-ref="points3" ></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<!-- By type -->
+	<bean id="triangle2" class="com.vikram.bishwajit.constructorInjection.Triangle">
+		<constructor-arg type="java.lang.String" value="EQUILATERAl" />
+		<constructor-arg type="int" value="20" />
+		<constructor-arg type="" ref="p"/>
+		<constructor-arg>
+			<list>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="PointA" value-ref="points1"></entry>
+				<entry key="PointB" value-ref="points2" ></entry>
+				<entry key="PointC" value-ref="points3" ></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<!-- By index -->
+	<bean id="triangle3" class="com.vikram.bishwajit.constructorInjection.Triangle">
+		<constructor-arg index="0" value="EQUILATERAl" />
+		<constructor-arg index="1" value="20" />
+		<constructor-arg index="2" ref="p"/>
+		<constructor-arg>
+			<list>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="PointA" value-ref="points1"></entry>
+				<entry key="PointB" value-ref="points2" ></entry>
+				<entry key="PointC" value-ref="points3" ></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<ref bean="points1"/>
+				<ref bean="points2"/>
+				<ref bean="points3"/>
+			</set>
+		</constructor-arg>
+	</bean>
+
+	<bean id="p" class="com.vikram.bishwajit.constructorInjection.Point">
+		<property name="x" value="2" />
+		<property name="y" value="3" />
+	</bean>
+	
+	<bean id="points1"   class="com.vikram.bishwajit.constructorInjection.Point">
+		<property name="x" value="1" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="points2"   class="com.vikram.bishwajit.constructorInjection.Point">
+		<property name="x" value="-1" />
+		<property name="y" value="0" />
+	</bean>
+	
+	<bean id="points3"   class="com.vikram.bishwajit.constructorInjection.Point">
+		<property name="x" value="1" />
+		<property name="y" value="1" />
+	</bean>
+	
+</beans>

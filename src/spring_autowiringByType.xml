@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="triangle" class="com.vikram.bishwajit.autowiringByType.Triangle" autowire="byType">
+		<property name="names" value="EQUILATERAL"/>
+		<property name="type" value="TRIANGLE"/>
+		<property name="sides" value="3"/>
+	</bean>
+
+	<bean id="point" class="com.vikram.bishwajit.autowiringByType.Point">
+		<property name="x" value="1" />
+		<property name="y" value="0" />
+	</bean>
+</beans>
